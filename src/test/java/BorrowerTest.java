@@ -1,4 +1,28 @@
-package PACKAGE_NAME;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class BorrowerTest {
+
+    private Borrower borrower;
+    private Library library;
+    private Book book1;
+    private Book book2;
+    private Book book3;
+
+    @Before
+    public void before(){
+        borrower = new Borrower("Bob");
+        library = new Library(100);
+        book1 = new Book("The Stab", "Bob McMurder", "Crime");
+        book2 = new Book("The Pink Thing", "Barbara Cartland", "Romance");
+        book3 = new Book("The Question", "Steve Ditko", "Mystery");
+    }
+
+    @Test
+    public void canTakeBook(){
+        borrower.takeBook(library);
+        assertEquals(1, borrower.countBooks());
+    }
 }

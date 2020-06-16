@@ -45,4 +45,11 @@ public class LibraryTest {
         assertEquals(2, library.countBooks());
     }
 
+    @Test
+    public void canRemoveBook(){
+        library.addBook(book1);
+        library.removeBook();
+        assertEquals(0, library.countBooks());
+    }
+
 }

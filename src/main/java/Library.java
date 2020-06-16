@@ -30,4 +30,10 @@ public class Library {
     public int countBooks() {
         return this.books.size();
     }
+
+    public Book removeBook() {
+        Book bookRemoved = null;
+        bookRemoved = this.books.remove(0);
+        return bookRemoved;
+    }
 }
