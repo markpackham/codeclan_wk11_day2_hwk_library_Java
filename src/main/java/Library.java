@@ -1,10 +1,20 @@
 import java.util.ArrayList;
 
 public class Library {
+    private int capacity;
     private ArrayList<Book> books;
 
-    public Library() {
+    public Library(int capacity) {
+        this.capacity = capacity;
         this.books = new ArrayList<Book>();
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 
     public ArrayList<Book> getBooks() {
@@ -12,7 +22,9 @@ public class Library {
     }
 
     public void addBook(Book book) {
-        this.books.add(book);
+        if(countBooks() < this.capacity){
+            this.books.add(book);
+        }
     }
 
     public int countBooks() {
