@@ -35,4 +35,14 @@ public class LibraryTest {
         library.addBook(book2);
         assertEquals(2, library.countBooks());
     }
+
+    @Test
+    public void canAddBooksButNotWhenOverCapacity(){
+        library.addBook(book1);
+        library.addBook(book2);
+        // third book should not be added so result should still be 2 since capacity is 2
+        library.addBook(book3);
+        assertEquals(2, library.countBooks());
+    }
+
 }
