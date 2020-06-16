@@ -21,6 +21,11 @@ public class BorrowerTest {
     }
 
     @Test
+    public void canCountNoBooks(){
+        assertEquals(0, borrower.countBooks());
+    }
+
+    @Test
     public void canTakeBook(){
         library.addBook(book1);
         library.addBook(book2);
